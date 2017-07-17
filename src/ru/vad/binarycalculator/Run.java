@@ -16,6 +16,10 @@ import javax.swing.JTextField;
 public class Run {
 
 	public static void main(String[] args) {
+		BinaryCalculator bc = new BinaryCalculator();
+		
+		bc.TranslationONS(7);
+		
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 		JTextField txt1 = new JTextField(10);
