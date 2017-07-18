@@ -5,23 +5,29 @@ import java.util.ArrayList;
 public class BinaryCalculator {
 
 	// Method translation from the binary system in the decimal
-	public void TranslationONS(int a) {
-		ArrayList<Integer> count = new ArrayList<>();
+	public ArrayList<String> TranslationONS(int a) {
+		ArrayList<String> count = new ArrayList<>();
 
 		while (a > 0) {
 			if (a % 2 == 0) {
-				count.add(0);
+				count.add("0");
 			} else {
-				count.add(1);
+				count.add("1");
 			}
 			a = a / 2;
 		}
-		for (int i = 0; i < count.size(); i++) {
-			System.out.println(count.get(i));
-		}
+		return count;
+
 	}
 
 	public void accountAmount(int a, int b) {
-
+		String str = null;		
+		TranslationONS(a);
+		TranslationONS(b);
+		for (int i = 0; i < TranslationONS(a).size(); i++) {
+			if (TranslationONS(a).equals("1")&&TranslationONS(b).equals("1")) {
+				str= str +"10";								
+			}
+		}		
 	}
 }

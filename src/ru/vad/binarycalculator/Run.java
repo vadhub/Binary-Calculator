@@ -18,7 +18,7 @@ public class Run {
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
 		
-		bc.TranslationONS(7);
+		System.out.println(bc.TranslationONS(15));
 		
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
