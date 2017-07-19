@@ -7,15 +7,17 @@ public class BinaryCalculator {
 		String count = "";
 		StringBuffer sb = new StringBuffer();
 		
-		while (a > 0) {
-			if (a % 2 == 0) {
-				count = count + "0";
-			} else {
-				count = count + "1";
+		while (a != 0) {
+			if(a % 2 != 0){
+				count = count + "1";								
 			}
+			
+			if (a % 2 == 0) {
+				count = count + "0";								
+			}			
 			a = a / 2;
 		}
-		sb.append(count);
+		sb.append(count).reverse();
 		if(count.length()==1){
 			sb.insert(0,"000");			
 		}else if(count.length()==2){
