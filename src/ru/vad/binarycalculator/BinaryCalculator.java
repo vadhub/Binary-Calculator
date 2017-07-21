@@ -34,12 +34,15 @@ public class BinaryCalculator {
 		String af = TranslationONS(a);
 		String bf = TranslationONS(b);
 		
-		for (int i =0;i<af.length();i++){
-			if(af.startsWith("1")){
-				str +="1";
-			}else {
-				str +="0";				
-			}
+		int omp = af.length()+(bf.length()-af.length());
+		
+		for (int i =0;i<omp;i++){
+			
+			if(af.startsWith("0", i)&&bf.startsWith("0", i)){
+				str = str+"0";				
+			}else if(af.startsWith("1", i)&&bf.startsWith("0", i)||af.startsWith("0", i)&&bf.startsWith("1", i)){
+				str = str+"1";
+			}			
 		}	
 				
 		return str;
