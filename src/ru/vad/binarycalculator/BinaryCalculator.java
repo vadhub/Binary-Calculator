@@ -42,7 +42,9 @@ public class BinaryCalculator {
 				str = str+"0";				
 			}else if(af.startsWith("1", i)&&bf.startsWith("0", i)||af.startsWith("0", i)&&bf.startsWith("1", i)){
 				str = str+"1";
-			}			
+			}else if(af.startsWith("1", i)&&bf.startsWith("1", i)){
+				str = str+"10";
+			}						
 		}	
 				
 		return str;
