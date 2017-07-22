@@ -21,8 +21,7 @@ public class Run {
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
 
-		System.out.println(bc.TranslationONS(255));
-		System.out.println(bc.accountAmount(7, 1));
+		System.out.println(bc.TranslationONS(255));		
 
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
@@ -40,11 +39,14 @@ public class Run {
 		
 		ftr.setText("0");
 		ftr2.setText("0");
+		
+		txt1.setText("0");
+		txt2.setText("0");
 
 		cho.add("+");
 		cho.add("-");
 		cho.add("*");
-		cho.add("/");
+		cho.add("/");				
 
 		if (cho.getSelectedIndex() == 0) {
 			label1.setText("+");
@@ -63,6 +65,17 @@ public class Run {
 		translate.add(ftr);
 		translate.add(forTranslate);
 		translate.add(ftr2);
+		
+		button1.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int a = Integer.getInteger(txt1.getText());
+				int b = Integer.getInteger(txt2.getText());
+				result.setText(bc.accountAmount(a, b));
+				
+			}
+		});
 
 		button2.addActionListener(new ActionListener() {
 
