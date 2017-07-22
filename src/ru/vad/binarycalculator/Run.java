@@ -21,7 +21,7 @@ public class Run {
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
 
-		System.out.println(bc.TranslationONS(5));
+		System.out.println(bc.TranslationONS(255));
 		System.out.println(bc.accountAmount(7, 1));
 
 		JFrame frame = new JFrame();

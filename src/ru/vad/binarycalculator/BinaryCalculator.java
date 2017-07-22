@@ -30,6 +30,7 @@ public class BinaryCalculator {
 
 	public String accountAmount(int a, int b) {
 		String str="";
+		StringBuffer sBuf = new StringBuffer(str);
 		
 		String af = TranslationONS(a);
 		String bf = TranslationONS(b);
@@ -43,10 +44,9 @@ public class BinaryCalculator {
 			}else if(af.startsWith("1", i)&&bf.startsWith("0", i)||af.startsWith("0", i)&&bf.startsWith("1", i)){
 				str = str+"1";
 			}else if(af.startsWith("1", i)&&bf.startsWith("1", i)){
-				str = str+"10";
+				sBuf.insert(i-1, '1');
 			}						
-		}	
-				
-		return str;
+		}				
+		return sBuf.toString();
 	}
 }
