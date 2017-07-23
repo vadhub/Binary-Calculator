@@ -52,8 +52,7 @@ public class BinaryCalculator {
 	}
 	//Multiplication of numbers
 	public String accountMultip(int a, int b) {
-		String str="";
-		StringBuffer sBuf = new StringBuffer(str);
+		String str="";		
 		
 		String af = TranslationONS(a);
 		String bf = TranslationONS(b);
@@ -70,6 +69,6 @@ public class BinaryCalculator {
 				str = str+"1";
 			}						
 		}				
-		return sBuf.toString();
+		return af;
 	}
 }

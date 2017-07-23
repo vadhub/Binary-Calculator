@@ -29,7 +29,7 @@ public class Run {
 		JTextField txt1 = new JTextField(10);
 		JLabel label1 = new JLabel();
 		JTextField txt2 = new JTextField(10);
-		JButton button1 = new JButton("Ok");
+		JButton button1 = new JButton("A");
 		JButton button2 = new JButton("Numbe");
 		JButton forTranslate = new JButton("Translation");
 		JTextField ftr = new JTextField(5);
@@ -55,23 +55,25 @@ public class Run {
 			public void actionPerformed(ActionEvent e) {
 				int a;
 				int b;
-				a = Integer.getInteger(txt1.getText());
-				b = Integer.getInteger(txt2.getText());
+				a = Integer.parseInt(txt1.getText());
+				b = Integer.parseInt(txt2.getText());
 
 				if (cho.getSelectedIndex() == 0) {
 					label1.setText("+");
-					result.setText(bc.accountAmount(a, b));
+					String rez = bc.accountAmount(a, b);
+					result.setText(rez);
 
 				} else if (cho.getSelectedIndex() == 1) {
 					label1.setText("-");
 
 				} else if (cho.getSelectedIndex() == 2) {
 					label1.setText("*");
-					result.setText(bc.accountMultip(a, b));
+					String rez = bc.accountMultip(a, b);
+					result.setText(rez);				
 
 				} else if (cho.getSelectedIndex() == 3) {
-
 					label1.setText("/");
+					
 				}
 
 			}
@@ -106,7 +108,7 @@ public class Run {
 
 		frame.add(panel);
 		frame.setSize(390, 100);
-		frame.setLocation(400, 400);
+		frame.setLocation(400, 500);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
