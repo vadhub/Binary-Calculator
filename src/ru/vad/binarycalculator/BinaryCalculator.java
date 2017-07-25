@@ -27,6 +27,14 @@ public class BinaryCalculator {
 		return sub.toString();
 
 	}
+	
+	public int TranslationBND(String a){
+		int count = 0;
+		for(int i = 0;i<a.length();i++){
+			count++;
+		}
+		return count;
+	}
 
 	//method summ two numbers
 	public String accountAmount(int a, int b) {
