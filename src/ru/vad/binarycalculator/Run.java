@@ -20,8 +20,9 @@ public class Run {
 
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
+		
 
-		System.out.println(bc.TranslationONS(255));
+		System.out.println(bc.TranslationBND("0011"));
 
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
