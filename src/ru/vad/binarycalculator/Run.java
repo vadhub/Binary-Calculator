@@ -22,7 +22,7 @@ public class Run {
 		BinaryCalculator bc = new BinaryCalculator();
 		
 
-		System.out.println(bc.TranslationBND("0011"));
+		System.out.println(bc.TranslationBND("1110"));
 
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
