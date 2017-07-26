@@ -28,17 +28,15 @@ public class BinaryCalculator {
 
 	}
 
-	public StringBuffer TranslationBND(String a) {
-		StringBuffer sub = new StringBuffer();
-		a =  sub.append(a).reverse().toString();		
+	public int TranslationBND(String a) {		
 		int out = 0;		
-		for (int i = 0; i < a.length(); i++) {
-			if (a.startsWith("1")) {				
-				out = (int) (out +Math.pow(2,i));				
-			}
+		for (int i = 0; i <= a.length(); i++) {
+			if (a.startsWith("1")) {
+				out = (int) (out + Math.pow(2, i));				
+			}			
 		}
-		
-		return sub;
+
+		return out;
 	}
 
 	// method summ two numbers
