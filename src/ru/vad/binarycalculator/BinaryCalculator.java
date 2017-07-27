@@ -40,13 +40,8 @@ public class BinaryCalculator {
 		double out = 0;
 		a = rotateWords(a); 
 		for (int i = 0; i < a.length(); i++) {
-			if (a.contains("1")) {
-				out = out + Math.pow(2.0, i);				
-			}		
-			System.out.println(i);
-			System.out.println(a);
-		}
-
+	        out += Math.pow(2, i) * (a.charAt(i) == '1' ? 1 : 0);
+	    }
 		return out;
 	}	
 	// method summ two numbers
@@ -95,4 +90,6 @@ public class BinaryCalculator {
 		}
 		return af;
 	}
+	
+	
 }
