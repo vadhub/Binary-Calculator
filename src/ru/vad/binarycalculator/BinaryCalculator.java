@@ -27,18 +27,28 @@ public class BinaryCalculator {
 		return sub.toString();
 
 	}
+	
+	public String rotateWords(String word){
+		String result = "";
+		for(int i = word.length() - 1;i>=0;i--){
+			result = result + word.substring(i, i+1);			
+		}
+		return result;
+	}
 
-	public int TranslationBND(String a) {		
-		int out = 0;		
-		for (int i = 0; i <= a.length(); i++) {
-			if (a.startsWith("1")) {
-				out = (int) (out + Math.pow(2, i));				
-			}			
+	public double TranslationBND(String a) {		
+		double out = 0;
+		a = rotateWords(a); 
+		for (int i = 0; i < a.length(); i++) {
+			if (a.contains("1")) {
+				out = out + Math.pow(2.0, i);				
+			}		
+			System.out.println(i);
+			System.out.println(a);
 		}
 
 		return out;
-	}
-
+	}	
 	// method summ two numbers
 	public String accountAmount(int a, int b) {
 		String str = "";
