@@ -47,15 +47,22 @@ public class BinaryCalculator {
 	}
 	
 	// method summ two numbers
-	public String accountAmount(int a, int b) {		 
+	public String SumNumber(int a, int b) {		 
 		a = a+b;
 		String tr = TranslationONS(a);	
 		return tr;
 	}
 
 	// Multiplication of numbers
-	public String accountMultip(int a, int b) {
+	public String MultipNumber(int a, int b) {
 		a = a*b;
+		String tr = TranslationONS(a);
+		
+		return tr;
+	}
+	
+	public String DividingNumber(int a, int b) {
+		a = a/b;
 		String tr = TranslationONS(a);
 		
 		return tr;

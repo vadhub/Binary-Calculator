@@ -61,7 +61,7 @@ public class Run {
 
 				if (cho.getSelectedIndex() == 0) {
 					label1.setText("+");
-					String rez = bc.accountAmount(a, b);
+					String rez = bc.SumNumber(a, b);
 					result.setText(rez);
 
 				} else if (cho.getSelectedIndex() == 1) {
@@ -69,7 +69,7 @@ public class Run {
 
 				} else if (cho.getSelectedIndex() == 2) {
 					label1.setText("*");
-					String rez = bc.accountMultip(a, b);
+					String rez = bc.MultipNumber(a, b);
 					result.setText(rez);				
 
 				} else if (cho.getSelectedIndex() == 3) {
