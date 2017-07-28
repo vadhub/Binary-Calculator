@@ -60,10 +60,23 @@ public class BinaryCalculator {
 		
 		return tr;
 	}
-	
+	//Dividing of numbers
 	public String DividingNumber(int a, int b) {
 		a = a/b;
 		String tr = TranslationONS(a);
+		
+		return tr;
+	}
+	//Difference of numbers
+	public String DifferenceNumber(int a, int b) {
+		int dif = 0;
+		if(a>b){
+			dif = b-a;
+		}else{
+			dif = a-b;
+		}
+		
+		String tr = TranslationONS(dif);
 		
 		return tr;
 	}
