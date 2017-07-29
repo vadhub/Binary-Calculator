@@ -1,8 +1,14 @@
 package ru.vad.binarycalculator;
 
+/*
+ * class Class is responsible for translating numbers from the decimal 
+ * number system to binary and the product of mathematical operations
+ *  on these numbers
+ */
+
 public class BinaryCalculator {
 
-	// Method translation from the binary system in the decimal
+	// Method translation from the decimal system in the binary
 	public String TranslationONS(int a) {
 		String count = "";
 		StringBuffer sub = new StringBuffer();
@@ -36,7 +42,7 @@ public class BinaryCalculator {
 		return result;
 	}
 
-	//// Method translation from the decimal system in the binary
+	//// Method translation from the binary system in the decimal
 	public double TranslationBND(String a) {		
 		double out = 0;
 		a = rotateWords(a); 
