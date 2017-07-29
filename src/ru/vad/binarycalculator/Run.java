@@ -1,7 +1,6 @@
 package ru.vad.binarycalculator;
 
 import java.awt.Choice;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -88,6 +87,15 @@ public class Run {
 			}
 		});
 
+		trsform.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				int rez = (int) bc.TranslationBND(ftr.getText());
+				ftr2.setText(String.valueOf(rez));
+			}
+		});
+		
 		button2.addActionListener(new ActionListener() {
 
 			@Override
