@@ -1,9 +1,11 @@
 package ru.vad.binarycalculator;
 
 import java.awt.Choice;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -20,6 +22,8 @@ public class Run {
 
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
+		
+		ImageIcon icon = new ImageIcon("icon/trsform.JPG");
 
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
@@ -30,10 +34,13 @@ public class Run {
 		JButton button1 = new JButton("Result");
 		JButton button2 = new JButton("Numbe");
 		JButton forTranslate = new JButton("Translation");
+		JButton trsform= new JButton();
 		JTextField ftr = new JTextField(5);
 		JTextField ftr2 = new JTextField(5);
 		JTextField result = new JTextField(10);
 		Choice cho = new Choice();
+		
+		trsform.setIcon(icon);
 
 		ftr.setText("0");
 		ftr2.setText("0");
@@ -43,8 +50,9 @@ public class Run {
 		cho.add("*");
 		cho.add("/");	
 
+		translate.add(trsform);
 		translate.add(ftr);
-		translate.add(forTranslate);
+		translate.add(forTranslate);		
 		translate.add(ftr2);
 
 		button1.addActionListener(new ActionListener() {
