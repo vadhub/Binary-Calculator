@@ -3,13 +3,12 @@ package ru.vad.binarycalculator;
 import java.awt.Choice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /*
@@ -19,10 +18,10 @@ import javax.swing.JTextField;
 
 public class Run {
 
+	private static int i;
+
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
-		
-		ImageIcon icon = new ImageIcon("icon/trsform.JPG");
 
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
@@ -33,13 +32,11 @@ public class Run {
 		JButton button1 = new JButton("Result");
 		JButton button2 = new JButton("Numbe");
 		JButton forTranslate = new JButton("Translation");
-		JButton trsform= new JButton();
+		JRadioButton trsform = new JRadioButton("Binary");
 		JTextField ftr = new JTextField(5);
 		JTextField ftr2 = new JTextField(5);
 		JTextField result = new JTextField(10);
 		Choice cho = new Choice();
-		
-		trsform.setIcon(icon);
 
 		ftr.setText("0");
 		ftr2.setText("0");
@@ -47,11 +44,12 @@ public class Run {
 		cho.add("+");
 		cho.add("-");
 		cho.add("*");
-		cho.add("/");	
+		cho.add("/");
 
 		translate.add(trsform);
+
 		translate.add(ftr);
-		translate.add(forTranslate);		
+		translate.add(forTranslate);
 		translate.add(ftr2);
 
 		button1.addActionListener(new ActionListener() {
@@ -76,34 +74,40 @@ public class Run {
 				} else if (cho.getSelectedIndex() == 2) {
 					label1.setText("*");
 					String rez = bc.MultipNumber(a, b);
-					result.setText(rez);				
+					result.setText(rez);
 
 				} else if (cho.getSelectedIndex() == 3) {
 					label1.setText("/");
 					String rez = bc.DividingNumber(a, b);
-					result.setText(rez);					
+					result.setText(rez);
 				}
 
 			}
 		});
 
+		i = 0;
+
 		trsform.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int rez = (int) bc.TranslationBND(ftr.getText());
-				ftr2.setText(String.valueOf(rez));
+				i = 1;
+				trsform.setText(String.valueOf(i));
 			}
 		});
-		
+
 		button2.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, translate, "Translation",JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, translate, "Translation",
+						JOptionPane.PLAIN_MESSAGE);
 
 			}
 		});
+
+		int rez = (int) bc.TranslationBND(ftr.getText());
+		ftr2.setText(String.valueOf(rez));
 
 		forTranslate.addActionListener(new ActionListener() {
 
