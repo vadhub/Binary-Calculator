@@ -18,8 +18,6 @@ import javax.swing.JTextField;
 
 public class Run {
 
-	private static int i;
-
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
 
@@ -85,16 +83,31 @@ public class Run {
 			}
 		});
 
-		i = 0;
+	
+		
+		if (trsform.isSelected()) {
 
-		trsform.addActionListener(new ActionListener() {
+			forTranslate.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				i = 1;
-				trsform.setText(String.valueOf(i));
-			}
-		});
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					int rez = (int) bc.TranslationBND(ftr.getText());
+					ftr2.setText(String.valueOf(rez));
+
+				}
+			});
+
+		} else {
+			forTranslate.addActionListener(new ActionListener() {
+
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					int a = Integer.parseInt(ftr.getText());
+					ftr2.setText(bc.TranslationONS(a));
+
+				}
+			});
+		}
 
 		button2.addActionListener(new ActionListener() {
 
@@ -102,19 +115,6 @@ public class Run {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, translate, "Translation",
 						JOptionPane.PLAIN_MESSAGE);
-
-			}
-		});
-
-		int rez = (int) bc.TranslationBND(ftr.getText());
-		ftr2.setText(String.valueOf(rez));
-
-		forTranslate.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int a = Integer.parseInt(ftr.getText());
-				ftr2.setText(bc.TranslationONS(a));
 
 			}
 		});
