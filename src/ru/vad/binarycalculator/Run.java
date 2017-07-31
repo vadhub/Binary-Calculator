@@ -31,6 +31,7 @@ public class Run {
 		JButton button2 = new JButton("Numbe");
 		JButton forTranslate = new JButton("Translation");
 		JRadioButton trsform = new JRadioButton("Binary");
+		JRadioButton trsform2 = new JRadioButton("Decimal");
 		JTextField ftr = new JTextField(5);
 		JTextField ftr2 = new JTextField(5);
 		JTextField result = new JTextField(10);
@@ -45,6 +46,7 @@ public class Run {
 		cho.add("/");
 
 		translate.add(trsform);
+		translate.add(trsform2);
 
 		translate.add(ftr);
 		translate.add(forTranslate);
@@ -86,6 +88,7 @@ public class Run {
 	
 		
 		if (trsform.isSelected()) {
+			trsform2.setSelected(false);
 
 			forTranslate.addActionListener(new ActionListener() {
 
@@ -97,7 +100,8 @@ public class Run {
 				}
 			});
 
-		} else {
+		}else if(trsform2.isSelected()){
+			trsform.setSelected(false);
 			forTranslate.addActionListener(new ActionListener() {
 
 				@Override
@@ -106,8 +110,9 @@ public class Run {
 					ftr2.setText(bc.TranslationONS(a));
 
 				}
-			});
+			});			
 		}
+		
 
 		button2.addActionListener(new ActionListener() {
 
