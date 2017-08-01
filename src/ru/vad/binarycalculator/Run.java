@@ -8,7 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /*
@@ -29,9 +28,8 @@ public class Run {
 		JTextField txt2 = new JTextField(10);
 		JButton button1 = new JButton("Result");
 		JButton button2 = new JButton("Numbe");
-		JButton forTranslate = new JButton("Translation");
-		JRadioButton trsform = new JRadioButton("Binary");
-		JRadioButton trsform2 = new JRadioButton("Decimal");
+		JButton forTranslate = new JButton("TranslatBinary");
+		JButton forTranslate2 = new JButton("TranslatDecimal");
 		JTextField ftr = new JTextField(5);
 		JTextField ftr2 = new JTextField(5);
 		JTextField result = new JTextField(10);
@@ -45,10 +43,8 @@ public class Run {
 		cho.add("*");
 		cho.add("/");
 
-		translate.add(trsform);
-		translate.add(trsform2);
-
 		translate.add(ftr);
+		translate.add(forTranslate2);
 		translate.add(forTranslate);
 		translate.add(ftr2);
 
@@ -85,34 +81,25 @@ public class Run {
 			}
 		});
 
-	
-		
-		if (trsform.isSelected()) {
-			trsform2.setSelected(false);
+		forTranslate2.addActionListener(new ActionListener() {
 
-			forTranslate.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int rez = (int) bc.TranslationBND(ftr.getText());
+				ftr2.setText(String.valueOf(rez));
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					int rez = (int) bc.TranslationBND(ftr.getText());
-					ftr2.setText(String.valueOf(rez));
+			}
+		});
 
-				}
-			});
+		forTranslate.addActionListener(new ActionListener() {
 
-		}else if(trsform2.isSelected()){
-			trsform.setSelected(false);
-			forTranslate.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int a = Integer.parseInt(ftr.getText());
+				ftr2.setText(bc.TranslationONS(a));
 
-				@Override
-				public void actionPerformed(ActionEvent e) {
-					int a = Integer.parseInt(ftr.getText());
-					ftr2.setText(bc.TranslationONS(a));
-
-				}
-			});			
-		}
-		
+			}
+		});
 
 		button2.addActionListener(new ActionListener() {
 
