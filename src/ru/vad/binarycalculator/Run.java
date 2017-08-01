@@ -3,6 +3,7 @@ package ru.vad.binarycalculator;
 import java.awt.Choice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,7 +36,7 @@ public class Run {
 		JTextField result = new JTextField(10);
 		Choice cho = new Choice();
 
-		ftr.setText("0");
+		ftr.setText("1");
 		ftr2.setText("0");
 
 		cho.add("+");
@@ -85,8 +86,12 @@ public class Run {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int rez = (int) bc.TranslationBND(ftr.getText());
-				ftr2.setText(String.valueOf(rez));
+				try {
+					int rez = (int) bc.TranslationBND(ftr.getText());
+					ftr2.setText(String.valueOf(rez));
+				} catch (Exception e1) {
+					JOptionPane.showMessageDialog(null, "enter the number!");
+				}
 
 			}
 		});
@@ -94,9 +99,13 @@ public class Run {
 		forTranslate.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {
-				int a = Integer.parseInt(ftr.getText());
-				ftr2.setText(bc.TranslationONS(a));
+			public void actionPerformed(ActionEvent e1) {
+				try {
+					int a = Integer.parseInt(ftr.getText());
+					ftr2.setText(bc.TranslationONS(a));
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "enter the number!");
+				}
 
 			}
 		});
