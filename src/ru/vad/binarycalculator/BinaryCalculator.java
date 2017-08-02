@@ -9,7 +9,7 @@ package ru.vad.binarycalculator;
 public class BinaryCalculator {
 
 	// Method translation from the decimal system in the binary
-	public String TranslationONS(float a) {
+	public String TranslationONS(int a) {
 		String count = "";
 		StringBuffer sub = new StringBuffer();
 
@@ -53,29 +53,29 @@ public class BinaryCalculator {
 	}
 	
 	// method summ two numbers
-	public String SumNumber(float a, float b) {		 
+	public String SumNumber(int a, int b) {		 
 		a = a+b;
 		String tr = TranslationONS(a);	
 		return tr;
 	}
 
 	// Multiplication of numbers
-	public String MultipNumber(float a, float b) {
+	public String MultipNumber(int a, int b) {
 		a = a*b;
 		String tr = TranslationONS(a);
 		
 		return tr;
 	}
 	//Dividing of numbers
-	public String DividingNumber(float a, float b) {
+	public String DividingNumber(int a, int b) {
 		a = a/b;
 		String tr = TranslationONS(a);
 		
 		return tr;
 	}
 	//Difference of numbers
-	public String DifferenceNumber(float a, float b) {
-		float dif = 0;
+	public String DifferenceNumber(int a, int b) {
+		int dif = 0;
 		if(a>b){
 			dif = b-a;
 		}else{

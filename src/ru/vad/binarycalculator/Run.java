@@ -53,10 +53,14 @@ public class Run {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int a;
-				int b;
-				a = Integer.parseInt(txt1.getText());
-				b = Integer.parseInt(txt2.getText());
+				int a = 0;
+				int b = 0;				
+				try {
+					a = Integer.parseInt(txt1.getText());
+					b = Integer.parseInt(txt2.getText());
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, "enter the number!");
+				}
 
 				if (cho.getSelectedIndex() == 0) {
 					label1.setText("+");
