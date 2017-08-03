@@ -17,24 +17,37 @@ import javax.swing.JTextField;
  */
 
 public class Run {
+	
+	static JButton button1;
+	static JButton button2;
+	static JButton forTranslate;
+	static JButton forTranslate2;
 
 	public static void main(String[] args) {
 		BinaryCalculator bc = new BinaryCalculator();
-
+		
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
 		JPanel translate = new JPanel();
 		JTextField txt1 = new JTextField(10);
 		JLabel label1 = new JLabel("+");
-		JTextField txt2 = new JTextField(10);
-		JButton button1 = new JButton("Result");
-		JButton button2 = new JButton("Numbe");
-		JButton forTranslate = new JButton("TranslatBinary");
-		JButton forTranslate2 = new JButton("TranslatDecimal");
+		JTextField txt2 = new JTextField(10);	   
 		JTextField ftr = new JTextField(5);
 		JTextField ftr2 = new JTextField(5);
 		JTextField result = new JTextField(10);
 		Choice cho = new Choice();
+		
+		
+		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2);
+		
+		button1 = new JButton("Result");		
+		button1.addActionListener(bt);
+		
+		button2 = new JButton("Numbe");
+		forTranslate = new JButton("TranslatBinary");
+		forTranslate2 = new JButton("TranslatDecimal");
+
+		
 
 		ftr.setText("1");
 		ftr2.setText("0");
@@ -47,44 +60,7 @@ public class Run {
 		translate.add(ftr);
 		translate.add(forTranslate2);
 		translate.add(forTranslate);
-		translate.add(ftr2);
-
-		button1.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				int a = 0;
-				int b = 0;				
-				try {
-					a = Integer.parseInt(txt1.getText());
-					b = Integer.parseInt(txt2.getText());
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "enter the number!");
-				}
-
-				if (cho.getSelectedIndex() == 0) {
-					label1.setText("+");
-					String rez = bc.SumNumber(a, b);
-					result.setText(rez);
-
-				} else if (cho.getSelectedIndex() == 1) {
-					label1.setText("-");
-					String rez = bc.DifferenceNumber(a, b);
-					result.setText(rez);
-
-				} else if (cho.getSelectedIndex() == 2) {
-					label1.setText("*");
-					String rez = bc.MultipNumber(a, b);
-					result.setText(rez);
-
-				} else if (cho.getSelectedIndex() == 3) {
-					label1.setText("/");
-					String rez = bc.DividingNumber(a, b);
-					result.setText(rez);
-				}
-
-			}
-		});
+		translate.add(ftr2);		
 
 		forTranslate2.addActionListener(new ActionListener() {
 
