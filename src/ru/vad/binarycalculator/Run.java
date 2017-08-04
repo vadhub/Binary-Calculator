@@ -38,12 +38,13 @@ public class Run {
 		Choice cho = new Choice();
 		
 		
-		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2);
+		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2, panel);
 		
 		button1 = new JButton("Result");		
 		button1.addActionListener(bt);
 		
 		button2 = new JButton("Numbe");
+		button2.addActionListener(bt);
 		forTranslate = new JButton("TranslatBinary");
 		forTranslate2 = new JButton("TranslatDecimal");
 
@@ -88,17 +89,7 @@ public class Run {
 				}
 
 			}
-		});
-
-		button2.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, translate, "Translation",
-						JOptionPane.PLAIN_MESSAGE);
-
-			}
-		});
+		});		
 
 		panel.add(cho);
 		panel.add(button1);

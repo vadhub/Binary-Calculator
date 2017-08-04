@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class ButtonListener implements ActionListener{
@@ -17,12 +18,14 @@ public class ButtonListener implements ActionListener{
 	JTextField result = new JTextField(); 
 	JTextField txt1 = new JTextField();
 	JTextField txt2 = new JTextField();
-	public ButtonListener(JLabel label1,Choice cho, JTextField result,JTextField txt1,JTextField txt2) {
+	JPanel tr = new JPanel();
+	public ButtonListener(JLabel label1,Choice cho, JTextField result,JTextField txt1, JTextField txt2, JPanel tr) {
 		this.label1 = label1;
 		this.cho = cho;
 		this.result = result;
 		this.txt1 = txt1;
 		this.txt2 = txt2;
+		this.tr = tr;
 	}	
 
 	@Override
@@ -57,6 +60,17 @@ public class ButtonListener implements ActionListener{
 				String rez = bc.DividingNumber(a, b);
 				result.setText(rez);
 			}		
+		}
+		if(e.getSource()==Run.button2){
+			try {
+				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.PLAIN_MESSAGE);				
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, ">error<");
+			}
+			
+		}
+		if(e.getSource()==Run.forTranslate){
+			
 		}
 	}
 	
