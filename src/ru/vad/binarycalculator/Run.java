@@ -38,7 +38,7 @@ public class Run {
 		Choice cho = new Choice();
 		
 		
-		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2, panel);
+		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2, panel,ftr,ftr2);
 		
 		button1 = new JButton("Result");		
 		button1.addActionListener(bt);
@@ -76,20 +76,7 @@ public class Run {
 
 			}
 		});
-
-		forTranslate.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e1) {
-				try {
-					int a = Integer.parseInt(ftr.getText());
-					ftr2.setText(bc.TranslationONS(a));
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, "enter the number!");
-				}
-
-			}
-		});		
+		
 
 		panel.add(cho);
 		panel.add(button1);

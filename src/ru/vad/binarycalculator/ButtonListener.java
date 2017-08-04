@@ -19,14 +19,21 @@ public class ButtonListener implements ActionListener{
 	JTextField txt1 = new JTextField();
 	JTextField txt2 = new JTextField();
 	JPanel tr = new JPanel();
-	public ButtonListener(JLabel label1,Choice cho, JTextField result,JTextField txt1, JTextField txt2, JPanel tr) {
+	JTextField ftr = new JTextField();
+	JTextField ftr2 = new JTextField();
+	
+	public ButtonListener(JLabel label1,Choice cho, JTextField result,JTextField txt1, JTextField txt2, JPanel tr,JTextField ftr ,JTextField ftr2 ) {
 		this.label1 = label1;
 		this.cho = cho;
 		this.result = result;
 		this.txt1 = txt1;
 		this.txt2 = txt2;
 		this.tr = tr;
+		this.ftr = ftr;
+		this.ftr2 = ftr2;
+		
 	}	
+	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {		
@@ -70,7 +77,13 @@ public class ButtonListener implements ActionListener{
 			
 		}
 		if(e.getSource()==Run.forTranslate){
-			
+			try {
+				int a = Integer.parseInt(ftr.getText());
+				ftr2.setText(bc.TranslationONS(a));
+			} catch (Exception e2) {
+				JOptionPane.showMessageDialog(null, "enter the number!");
+			}
+
 		}
 	}
 	
