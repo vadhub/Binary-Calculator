@@ -9,20 +9,23 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class ButtonListener implements ActionListener{
-	
+public class ButtonListener implements ActionListener {
+
 	BinaryCalculator bc = new BinaryCalculator();
-	
+
 	JLabel label1 = new JLabel();
 	Choice cho = new Choice();
-	JTextField result = new JTextField(); 
+	JTextField result = new JTextField();
 	JTextField txt1 = new JTextField();
 	JTextField txt2 = new JTextField();
 	JPanel tr = new JPanel();
 	JTextField ftr = new JTextField();
 	JTextField ftr2 = new JTextField();
-	
-	public ButtonListener(JLabel label1,Choice cho, JTextField result,JTextField txt1, JTextField txt2, JPanel tr,JTextField ftr ,JTextField ftr2 ) {
+
+	public ButtonListener(JLabel label1, Choice cho, JTextField result,
+			JTextField txt1, JTextField txt2, JPanel tr, JTextField ftr,
+			JTextField ftr2) {
+		
 		this.label1 = label1;
 		this.cho = cho;
 		this.result = result;
@@ -31,15 +34,14 @@ public class ButtonListener implements ActionListener{
 		this.tr = tr;
 		this.ftr = ftr;
 		this.ftr2 = ftr2;
-		
-	}	
-	
+
+	}
 
 	@Override
-	public void actionPerformed(ActionEvent e) {		
-		if(e.getSource()==Run.button1){
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == Run.button1) {
 			int a = 0;
-			int b = 0;				
+			int b = 0;
 			try {
 				a = Integer.parseInt(txt1.getText());
 				b = Integer.parseInt(txt2.getText());
@@ -66,17 +68,20 @@ public class ButtonListener implements ActionListener{
 				label1.setText("/");
 				String rez = bc.DividingNumber(a, b);
 				result.setText(rez);
-			}		
+			}
 		}
-		if(e.getSource()==Run.button2){
+
+		if (e.getSource() == Run.button2) {
 			try {
-				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.PLAIN_MESSAGE);				
+				JOptionPane.showMessageDialog(null, tr, "Translation",
+						JOptionPane.PLAIN_MESSAGE);
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, ">error<");
 			}
-			
+
 		}
-		if(e.getSource()==Run.forTranslate){
+
+		if (e.getSource() == Run.forTranslate) {
 			try {
 				int a = Integer.parseInt(ftr.getText());
 				ftr2.setText(bc.TranslationONS(a));
@@ -85,6 +90,14 @@ public class ButtonListener implements ActionListener{
 			}
 
 		}
+		if(e.getSource() == Run.forTranslate2){
+			try {
+				int rez = (int) bc.TranslationBND(ftr.getText());
+				ftr2.setText(String.valueOf(rez));
+			} catch (Exception e1) {
+				JOptionPane.showMessageDialog(null, "enter the number!");
+			}
+		}
 	}
-	
+
 }
