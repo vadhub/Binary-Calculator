@@ -34,7 +34,7 @@ public class Run {
 		Choice cho = new Choice();
 
 		ButtonListener bt = new ButtonListener(label1, cho, result, txt1, txt2,
-				panel, ftr, ftr2);
+				translate, ftr, ftr2);
 
 		button1 = new JButton("Result");
 		button1.addActionListener(bt);

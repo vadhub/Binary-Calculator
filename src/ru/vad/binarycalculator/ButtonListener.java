@@ -90,6 +90,7 @@ public class ButtonListener implements ActionListener {
 			}
 
 		}
+		
 		if(e.getSource() == Run.forTranslate2){
 			try {
 				int rez = (int) bc.TranslationBND(ftr.getText());
