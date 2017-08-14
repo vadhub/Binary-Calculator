@@ -25,7 +25,7 @@ public class ButtonListener implements ActionListener {
 	public ButtonListener(JLabel label1, Choice cho, JTextField result,
 			JTextField txt1, JTextField txt2, JPanel tr, JTextField ftr,
 			JTextField ftr2) {
-		
+
 		this.label1 = label1;
 		this.cho = cho;
 		this.result = result;
@@ -40,6 +40,7 @@ public class ButtonListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == Run.button1) {
+
 			int a = 0;
 			int b = 0;
 			try {
@@ -90,8 +91,8 @@ public class ButtonListener implements ActionListener {
 			}
 
 		}
-		
-		if(e.getSource() == Run.forTranslate2){
+
+		if (e.getSource() == Run.forTranslate2) {
 			try {
 				int rez = (int) bc.TranslationBND(ftr.getText());
 				ftr2.setText(String.valueOf(rez));
