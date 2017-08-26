@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 public class ButtonListener implements ActionListener {
 
 	BinaryCalculator bc = new BinaryCalculator();
+	ConvertLettersToNumbers CLTN = new ConvertLettersToNumbers();
 
 	JLabel label1 = new JLabel();
 	Choice cho = new Choice();
@@ -74,18 +75,17 @@ public class ButtonListener implements ActionListener {
 
 		if (e.getSource() == Run.button2) {
 			try {
-				JOptionPane.showMessageDialog(null, tr, "Translation",
-						JOptionPane.PLAIN_MESSAGE);
+				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.PLAIN_MESSAGE);				
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, ">error<");
 			}
-
 		}
 
 		if (e.getSource() == Run.forTranslate) {
 			try {
 				int a = Integer.parseInt(ftr.getText());
 				ftr2.setText(bc.TranslationONS(a));
+				ftr.setText(CLTN.convert(ftr2.getText()));
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
 			}

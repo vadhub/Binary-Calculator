@@ -23,6 +23,10 @@ public class Run {
 	static JButton forTranslate2;
 
 	public static void main(String[] args) {
+		
+		ConvertLettersToNumbers CLTN = new ConvertLettersToNumbers();
+		
+		CLTN.convert("a");
 
 		ImageIcon icon = new ImageIcon("icon/icon.png");
 
