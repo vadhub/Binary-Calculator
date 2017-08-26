@@ -24,9 +24,9 @@ public class Run {
 
 	public static void main(String[] args) {
 		
-		ConvertLettersToNumbers CLTN = new ConvertLettersToNumbers();
+		ConvertLettersToNumbers v = new ConvertLettersToNumbers();
 		
-		CLTN.convert("a");
+		System.out.println(v.convert("A"));
 
 		ImageIcon icon = new ImageIcon("icon/icon.png");
 

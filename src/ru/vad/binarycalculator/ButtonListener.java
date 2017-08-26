@@ -83,9 +83,10 @@ public class ButtonListener implements ActionListener {
 
 		if (e.getSource() == Run.forTranslate) {
 			try {
+				ftr2.setText(CLTN.convert(ftr.getText()));
 				int a = Integer.parseInt(ftr.getText());
 				ftr2.setText(bc.TranslationONS(a));
-				ftr.setText(CLTN.convert(ftr2.getText()));
+				
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
 			}
