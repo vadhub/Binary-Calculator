@@ -75,20 +75,26 @@ public class ButtonListener implements ActionListener {
 
 		if (e.getSource() == Run.button2) {
 			try {
-				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.PLAIN_MESSAGE);				
+				JOptionPane.showMessageDialog(null, tr, "Translation",
+						JOptionPane.PLAIN_MESSAGE);
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, ">error<");
 			}
 		}
 
 		if (e.getSource() == Run.forTranslate) {
+			int a = 0;
 			try {
-				ftr2.setText(CLTN.convert(ftr.getText()));
-				int a = Integer.parseInt(ftr.getText());
-				ftr2.setText(bc.TranslationONS(a));
-				
+				if (ftr.getText().equals(toString())) {
+					ftr2.setText(CLTN.convert(ftr.getText()));
+				} else {
+					a = Integer.parseInt(ftr.getText());
+					ftr2.setText(bc.TranslationONS(a));
+				}
+
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
+				JOptionPane.showMessageDialog(null, e2.getMessage());
 			}
 
 		}
