@@ -48,6 +48,7 @@ public class ButtonListener implements ActionListener {
 				b = Integer.parseInt(txt2.getText());
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
+				JOptionPane.showMessageDialog(null, e2.getMessage());
 			}
 
 			if (cho.getSelectedIndex() == 0) {
@@ -73,22 +74,23 @@ public class ButtonListener implements ActionListener {
 		}
 
 		if (e.getSource() == Run.button2) {
-			try {				
-				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.DEFAULT_OPTION);				
+			try {
+				JOptionPane.showMessageDialog(null, tr, "Translation",
+						JOptionPane.DEFAULT_OPTION);
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, ">error<");
+				JOptionPane.showMessageDialog(null, e2.getMessage());
 			}
 		}
 
 		if (e.getSource() == Run.forTranslate) {
 			int a = 0;
 			try {
-				if (ftr.getText().equals(toString())) {
-					ftr2.setText(CLTN.convert(ftr.getText()));
-				} else {
-					a = Integer.parseInt(ftr.getText());
-					ftr2.setText(bc.TranslationONS(a));
-				}
+				ftr.getText().equals(toString());
+
+				ftr2.setText(CLTN.convert(ftr.getText()));
+				a = Integer.parseInt(ftr.getText());
+				ftr2.setText(bc.TranslationONS(a));
 
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
@@ -103,6 +105,8 @@ public class ButtonListener implements ActionListener {
 				ftr2.setText(String.valueOf(rez));
 			} catch (Exception e1) {
 				JOptionPane.showMessageDialog(null, "enter the number!");
+				JOptionPane.showMessageDialog(null, e1.getMessage());
+				
 			}
 		}
 	}
