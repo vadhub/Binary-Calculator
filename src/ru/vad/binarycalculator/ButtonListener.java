@@ -13,7 +13,6 @@ public class ButtonListener implements ActionListener {
 
 	BinaryCalculator bc = new BinaryCalculator();
 	ConvertLettersToNumbers CLTN = new ConvertLettersToNumbers();
-
 	JLabel label1 = new JLabel();
 	Choice cho = new Choice();
 	JTextField result = new JTextField();
@@ -74,9 +73,8 @@ public class ButtonListener implements ActionListener {
 		}
 
 		if (e.getSource() == Run.button2) {
-			try {
-				JOptionPane.showMessageDialog(null, tr, "Translation",
-						JOptionPane.PLAIN_MESSAGE);
+			try {				
+				JOptionPane.showMessageDialog(null, tr, "Translation",JOptionPane.DEFAULT_OPTION);				
 			} catch (Exception e2) {
 				JOptionPane.showMessageDialog(null, ">error<");
 			}

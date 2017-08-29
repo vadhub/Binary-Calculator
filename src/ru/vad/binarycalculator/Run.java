@@ -22,11 +22,7 @@ public class Run {
 	static JButton forTranslate;
 	static JButton forTranslate2;
 
-	public static void main(String[] args) {
-		
-		ConvertLettersToNumbers v = new ConvertLettersToNumbers();
-		
-		System.out.println(v.convert("A"));
+	public static void main(String[] args) {		
 
 		ImageIcon icon = new ImageIcon("icon/icon.png");
 
@@ -79,6 +75,7 @@ public class Run {
 		panel.add(button2);
 		panel.add(result);
 
+		translate.setBackground(Color.DARK_GRAY);
 		panel.setBackground(Color.DARK_GRAY);
 		txt1.setBackground(Color.GRAY);
 		txt2.setBackground(Color.GRAY);
